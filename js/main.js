@@ -5,13 +5,21 @@ $(document).ready(function(){
 		$("body").addClass("modal-on");
 	});
 
- 	$(".close").click(function(e){
+ 	$(".modal a").click(function(e){
  		e.preventDefault();
 		$("body").removeClass("modal-on");
 		if( $(this).hasClass("yes")) {
 			window.location = "awesome.html";
-		} else {
+		}
+		else if( $(this).hasClass("no")) {
 			window.location = "http://www.w3schools.com/";
+		} else {
+		}
+	});
+
+	$(".modal_wrapper").click(function(e){
+		if( e.target.className == "modal_wrapper") {
+			$("body").removeClass("modal-on");
 		}
 	});
 
